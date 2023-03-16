@@ -70,6 +70,7 @@ public class Introducao {
          // sout enter = System.out.println();
 
          Scanner sc = new Scanner(System.in);
+         //Caneta caneta = new Caneta(Azul):
 
          System.out.println("Entre com seu nome: ");
          String nomeInformado = sc.nextLine();

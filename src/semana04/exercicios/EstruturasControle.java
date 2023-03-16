@@ -1,4 +1,4 @@
-package semana04;
+package semana04.exercicios;
 
 public class EstruturasControle {
     public static void main(String[] args) {
@@ -105,11 +105,5 @@ public class EstruturasControle {
             System.out.println(numero);
         }
 
-        var x = contador>3 ? 10 : "10";
-
-        if (contador > 3) {
-            var y = 10;
-        } else {
-            var y = "10";}
     }
 }
