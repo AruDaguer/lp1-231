@@ -6,9 +6,19 @@ public class Ex04 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("");
+        System.out.println("Entre com o código: ");
+        var codigo = sc.nextLine();
 
-        
+        if (codigo.length() == 7){
+            if (codigo[0] == 'B' && codigo[1] == 'R'){
+                if (codigo[6] == 'X'){
+                    System.out.println("valido");
+                    return 0;
+                }
+            } 
+        }
+        System.out.println("invalido");
+        return 0;
     }
     
 }
