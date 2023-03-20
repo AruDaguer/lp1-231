@@ -1,4 +1,4 @@
-package semana04.exercicios;
+package semana04;
 
 public class EstruturasControle {
     public static void main(String[] args) {

@@ -27,13 +27,11 @@ public class Ex03 {
             desconto = 0.15;
         }
 
-       // double valorFinal = valor - (valor * desconto);
-       
-        double valorFinal = (1 - desconto) * valor;
+       // double valorFinal = (1 - desconto) * valor;
        
 
         System.out.println("Desconto aplicado: " + (desconto * 100) + "%");
-        System.out.println("Valor final: R$" + valorFinal );
+        System.out.println("Valor final: R$" + ((1 - desconto) * valor) );
 
         sc.close();
     }
