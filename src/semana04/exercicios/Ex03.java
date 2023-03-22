@@ -27,8 +27,7 @@ public class Ex03 {
             desconto = 0.15;
         }
 
-       // double valorFinal = valor - (valor * desconto);
-       
+       // double valorFinal = valor - (valor * desconto);   
         double valorFinal = (1 - desconto) * valor;
        
 

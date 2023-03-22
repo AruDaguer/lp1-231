@@ -15,7 +15,7 @@ public class Ex04 {
         } else 
             System.out.println("Código inválido");
     
+            sc.close();
         }
 
     }
-    
