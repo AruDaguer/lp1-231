@@ -6,13 +6,20 @@ public class Ex02 {
         
         Scanner sc = new Scanner(System.in);
 
-        final float IMCIDEALMINIMO = 18.5f;
-        final float IMCIDEALMAXIMO = 24.9f;
+        final float IMC_IDEAL_MINIMO = 18.5f;
+        final float IMC_IDEAL_MAXIMO = 24.9f;
 
         System.out.print("Insira sua altura em metros: ");
         float altura = sc.nextFloat();
+
         System.out.print("Insira seu peso em Kg: ");
         float peso = sc.nextFloat();
+
+        if (altura <= 0 || peso <= 0){
+            System.out.println("Erro! Entrada inválida! Por favor, insira um número válido.");
+            sc.close();
+            return;
+        }
     
         float imc = peso / (altura * altura);
         String categoria; 
@@ -30,14 +37,15 @@ public class Ex02 {
         } else {
             categoria = "Obesidade de Classe 3";
         }
-        System.out.println("Você está em " + categoria + " (" + imc + " IMC)");
+
+        System.out.println("Você está em " + categoria + " (" + imc + " IMC).");
     
-        if (imc < IMCIDEALMINIMO || imc > IMCIDEALMAXIMO) {
-            float pesoIdeal = IMCIDEALMAXIMO * (altura * altura);
-            if (imc < IMCIDEALMINIMO) {
-                System.out.println("Você precisa ganhar " + (pesoIdeal - peso) + "Kg" );
+        if (imc < IMC_IDEAL_MINIMO || imc > IMC_IDEAL_MAXIMO) {
+            float pesoIdeal = IMC_IDEAL_MAXIMO * (altura * altura);
+            if (imc < IMC_IDEAL_MINIMO) {
+                System.out.println("Para chegar em seu peso ideial você precisa ganhar " + (pesoIdeal - peso) + "Kg." );
             } else {
-                System.out.println("Você precisa perder " + (peso - pesoIdeal) + "Kg" );
+                System.out.println("Para chegar em seu peso ideial você precisa perder " + (peso - pesoIdeal) + "Kg." );
             }
         }
         sc.close();
