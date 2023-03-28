@@ -2,9 +2,9 @@ package semana04.exercicios.exercicio04;
 
 public class ValidacaoCodigo {
 
-    public boolean validacao(String codigo){
+    public boolean validacao(String codigo) {
 
-        if (codigo.length() != 7 || ! codigo.startsWith("BR") || ! codigo.endsWith("X")){
+        if (codigo.length() != 7 || ! codigo.startsWith("BR") || ! codigo.endsWith("X")) {
             return false;
         }
 
@@ -13,7 +13,7 @@ public class ValidacaoCodigo {
         try{
             Integer.parseInt(numero);
 
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
 
