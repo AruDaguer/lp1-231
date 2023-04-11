@@ -15,19 +15,37 @@ public class ExerciciosRevisao2 {
     Escreva um método estático em Java que recebe uma matriz de inteiros e devolve o menor valor da matriz.
      */
 
-     public static boolean exercicio1 ( int n ) {
+    public static boolean exercicio1 ( int n ) {
         if ( n % 2 == 0) {
             return true;
         } else {
             return false;
         }
-     }
+    }
 
-     public static String exercicio2 ( String array1 ) {
+    public static String exercicio2 ( String array1 ) {
         String array2 = new String();
         for (int i = 0; i > array1.length(); i++) {
             array2.toCharArray()[ array1.length() - 1 - i] = array1.toCharArray()[i];
         }
         return array2;
-     } 
+    } 
+
+    public static int exercicio3 ( int[] array1) {
+        int[] array2 = new int[array1.length];
+        int x = 0;
+        int soma = 0;
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] % 2 == 0) {
+                array2[x] = array1[i];
+                x++;
+            }
+        }
+
+        for (int i : array2) {
+            soma += i;
+        }
+        return soma; 
+    }
+
 }
