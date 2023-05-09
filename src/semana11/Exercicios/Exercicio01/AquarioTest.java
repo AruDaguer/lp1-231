@@ -17,7 +17,7 @@ public class AquarioTest {
     }
 
     @Test
-    public void calcularPotenciaDoTermostatoTest() {
+    public void calcularPotenciaDoTermostatoPositivaTest() {
         Aquario aquario = new Aquario();
         aquario.comprimento = 10.0;
         aquario.altura = 10.0;
@@ -26,6 +26,18 @@ public class AquarioTest {
         double potencia = aquario.calcularPotenciaDoTermostato(30.0,25.0);
         
         assertEquals(0.25, potencia);
+    }
+
+    @Test
+    public void calcularPotenciaDoTermostatoNegativaTest() {
+        Aquario aquario = new Aquario();
+        aquario.comprimento = 10.0;
+        aquario.altura = 10.0;
+        aquario.largura = 10.0;
+
+        double potencia = aquario.calcularPotenciaDoTermostato(25.0,30.0);
+        
+        assertEquals(-0.25, potencia);
     }
 
     @Test
