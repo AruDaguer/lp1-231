@@ -1,7 +1,6 @@
 package semana05.exercicios;
 import java.util.Scanner;
 import java.util.InputMismatchException;
-import java.awt.color.*;
 
 public class Ex01{
     public static void main(String[] args) {
