@@ -53,18 +53,18 @@ public class Introducao {
          // TIPO nome;
          // nome = valor;
 
-         short idade = 15;
+         // short idade = 15;
 
          short idade2;
          idade2 = 30;
 
          // Java 10 - Inferência de tipos
-         var sobrenome = "Santos";
-         var idade3 = 45;
+         // var sobrenome = "Santos";
+         // var idade3 = 45;
          
          // Constantes
          // final TIPO NOME =  valor;
-         final double TESTE = 30.4;
+         // final double TESTE = 30.4;
 
          // Entrada e saída de dados
          // sout enter = System.out.println();

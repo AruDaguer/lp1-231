@@ -1,4 +1,4 @@
-package semana11.Exercicios.Exercicio01;
+package semana11.exercicios.exercicio01;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 

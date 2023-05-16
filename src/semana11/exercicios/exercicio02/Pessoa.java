@@ -1,4 +1,4 @@
-package semana11.Exercicios.Exercicio02;
+package semana11.exercicios.exercicio02;
 
 public class Pessoa {
     final double IMC_IDEAL_MINIMO = 18.5;

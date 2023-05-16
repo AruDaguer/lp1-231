@@ -1,10 +1,25 @@
-package semana11.Exercicios.Exercicio01;
+package semana12.exercicios.exercicio01;
 
 public class Aquario {
-    double altura = 0.0;
+    // Atributos
     double comprimento = 0.0;
+    double altura = 0.0;
     double largura = 0.0;
 
+    // Construtores
+    public Aquario(double comprimento, double altura, double largura) {
+        this.comprimento = comprimento;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Aquario(double valor) {
+        this.comprimento = valor;
+        this.altura = valor;
+        this.largura = valor;
+    }
+
+    // Métodos
     public double calcularVolume() {
         return ((comprimento * altura * largura) / 1000);
     }
@@ -17,4 +32,4 @@ public class Aquario {
         double[] array1 = {calcularVolume() * 3, calcularVolume() * 2};
         return array1;
     }
-}
+}    
