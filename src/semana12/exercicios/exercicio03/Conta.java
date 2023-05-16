@@ -1,10 +1,13 @@
 package semana12.exercicios.exercicio03;
 
 public class Conta {
-    int codigo;
-    double saldo = 0.0;
-    String correntista;
-    String erro = "ERRO!";
+    public int codigo;
+    private double saldo = 0.0;
+    public String correntista;
+
+    public double getSaldo() {
+        return saldo;
+    }
 
     public Conta(int codigo, String correntista) {
         this.codigo = codigo;
@@ -12,7 +15,9 @@ public class Conta {
     }
 
     public double depositar(double dinheiro) {
-        if (dinheiro <= 0) return -1; 
+        if (dinheiro <= 0) {
+            throw new IllegalArgumentException("Dinheiro inválido para depósito");
+        } 
         saldo += dinheiro;
         System.out.println("Depositar: R$" + dinheiro);
         System.out.println("R$" + (saldo - dinheiro) + " --->" + " R$" + saldo);
@@ -22,19 +27,29 @@ public class Conta {
     }
 
     public double sacar(double dinheiro) {
-        if (dinheiro > dinheiro) return -1;
+        if (dinheiro > saldo) {
+            throw new IllegalArgumentException("Saldo insuficiente para saque");
+        }
         saldo -= dinheiro; 
         System.out.println("Sacar: R$" + dinheiro);
         System.out.println("R$" + (saldo + dinheiro) + " --->" + " R$" + saldo);
         System.out.println("Saldo atual: R$" + saldo);
-        return dinheiro;
+        return saldo;
     }
 
-    public void transferir(double dinheiro, Conta conta) {
+    public double[] transferir(double dinheiro, Conta conta) {
+        if (dinheiro <= 0) {
+            throw new IllegalArgumentException("Dinheiro inválido para depósito");
+        } 
+        if (dinheiro > dinheiro) {
+            throw new IllegalArgumentException("Saldo insuficiente para saque");
+        }
         conta.depositar(dinheiro);
         sacar(dinheiro);
-        System.out.println("Depositar: R$" + dinheiro);
-        System.out.println("R$" + (saldo - dinheiro) + " --->" + " R$" + saldo);
+        double[] saldos = {saldo, conta.getSaldo()};
+        System.out.println("Tranferir: R$" + dinheiro);
+        System.out.println("R$" + (saldo + dinheiro) + " --->" + " R$" + saldo);
         System.out.println("Saldo atual: R$" + saldo);
+        return saldos;
     }
 }
