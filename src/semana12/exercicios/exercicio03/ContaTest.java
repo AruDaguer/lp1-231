@@ -1,6 +1,6 @@
 package semana12.exercicios.exercicio03;
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -13,9 +13,9 @@ public class ContaTest {
         String nome = "Jorge";
         Conta conta = new Conta(codigo, nome);
 
-        double saldo = conta.depositar(2500.0);
+        conta.depositar(2500.0);
 
-        assertEquals(2500.0, saldo);
+        assertEquals(2500.0, conta.getSaldo());
     }
     
     @Test
@@ -24,11 +24,11 @@ public class ContaTest {
         String nome = "Jorge";
         Conta conta = new Conta(codigo, nome);
 
-        Exception exception = assertThrows(RuntimeException.class, () -> {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             conta.depositar(-250.0);
         });
         
-        String erro = "Dinheiro inválido para depósito";
+        String erro = "Valor inválido para depósito";
         String mensagem = exception.getMessage();
 
         assertEquals(erro, mensagem);
@@ -41,9 +41,9 @@ public class ContaTest {
         Conta conta = new Conta(codigo, nome);
 
         conta.depositar(2500.0);
-        double saldo = conta.sacar(100.0);
+        conta.sacar(100.0);
 
-        assertEquals(2400.0, saldo);
+        assertEquals(2400.0, conta.getSaldo());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class ContaTest {
         String nome = "Jorge";
         Conta conta = new Conta(codigo, nome);
 
-        Exception exception = assertThrows(RuntimeException.class, () -> {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             conta.sacar(100.0);
         });
         
@@ -63,7 +63,7 @@ public class ContaTest {
     }
 
     @Test
-    public void transferirTest() {
+    public void transferirTestContaOrigem() {
         int codigo = 1;
         String nome = "Jorge";
         int codigo1 = 2;
@@ -72,8 +72,23 @@ public class ContaTest {
         Conta conta2 = new Conta(codigo1, nome1);
 
         conta.depositar(2500.0);
-        double[] transferencia = conta.transferir(500.0, conta2);
-        double[] arraycerto = {2000.0, 500.0};
-        assertArrayEquals(arraycerto, transferencia);
+        conta.transferir(500.0, conta2);
+
+        assertEquals(2000.0, conta.getSaldo());
+    }
+
+    @Test
+    public void transferirTestContaDestino() {
+        int codigo = 1;
+        String nome = "Jorge";
+        int codigo1 = 2;
+        String nome1 = "Julia";
+        Conta conta = new Conta(codigo, nome);
+        Conta conta2 = new Conta(codigo1, nome1);
+
+        conta.depositar(2500.0);
+        conta.transferir(500.0, conta2);
+
+        assertEquals(500.0, conta2.getSaldo());
     }
 }
