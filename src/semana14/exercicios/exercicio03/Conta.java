@@ -8,8 +8,8 @@ public class Conta {
 
     // Construtores
     public Conta(int codigo, String correntista) {
-        this.codigo = codigo;
-        this.correntista = correntista;
+        setCodigo(codigo);
+        setCorrentista(correntista);
         this.saldo = 0.0;
     }
 
@@ -36,7 +36,7 @@ public class Conta {
     }
 
     public void setCorrentista(String correntista) {
-        if (Double.parseDouble(correntista) < 5 || Double.parseDouble(correntista) > 100) {
+        if (correntista.length() < 5 || correntista.length() > 100) {
             throw new RuntimeException("Tamanho Inválido");
         }
 

@@ -9,8 +9,8 @@ public class Pessoa {
 
     // Construtores
     public Pessoa(double altura, double peso) {
-        this.altura = altura;
-        this.peso = peso;
+        setAltura(altura);
+        setPeso(peso);
     }
 
     // Get

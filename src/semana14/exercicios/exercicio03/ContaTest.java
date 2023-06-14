@@ -91,4 +91,32 @@ public class ContaTest {
 
         assertEquals(500.0, conta2.getSaldo());
     }
+     
+    @Test
+    public void construirContaComValorNegativo() {
+        assertThrows(RuntimeException.class, () -> new Conta(-1, "Jorge"));
+    }
+    
+    @Test
+    public void construirContaComNomeMenorQueCinco() {
+        assertThrows(RuntimeException.class, () -> new Conta(-1, "Joge"));
+    }
+
+    @Test
+    public void construirContaComNomeMaiorQueCem() {
+        assertThrows(RuntimeException.class, () -> new Conta(1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris suscipit leo id massa luctus posuere. Vivamus eleifend nunc quis fringilla placerat. Fusce tristique diam eu tellus efficitur, ut posuere elit consequat. Phasellus commodo vulputate ligula, non luctus neque varius nec. Suspendisse tincidunt massa et augue laoreet, vel cursus libero rhoncus. In nec efficitur tellus, id posuere ligula. Aenean in augue id nulla rutrum vulputate. Suspendisse vitae arcu sit amet nunc lobortis ultrices ac vitae mi. Suspendisse potenti. Duis in lectus consectetur, tincidunt dui in, auctor velit. Cras dignissim orci sit amet quam congue, a luctus ex venenatis. Sed dignissim justo vel dui iaculis sagittis. Proin nec mauris a mi commodo semper."));
+    }
+    
+    @Test
+    public void getCodigoTest() {
+        Conta conta = new Conta(1, "Jorge");
+        assertEquals(conta.getCodigo(), 1);
+    }
+    
+    @Test
+    public void getCorrentistaTest() {
+        Conta conta = new Conta(1, "Jorge");
+        assertEquals(conta.getCorrentista(), "Jorge");
+    }
+
 }

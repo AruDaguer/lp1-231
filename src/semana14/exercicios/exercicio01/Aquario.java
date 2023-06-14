@@ -9,14 +9,14 @@ public class Aquario {
     // Construtores
     public Aquario(double comprimento, double altura, double largura) {
         setComprimento(comprimento);
-        this.altura = altura;
-        this.largura = largura;
+        setAltura(altura);
+        setLargura(largura);
     }
 
     public Aquario(double valor) {
-        this.comprimento = valor;
-        this.altura = valor;
-        this.largura = valor;
+        setComprimento(valor);
+        setAltura(valor);
+        setLargura(valor);
     }
 
     // Get
@@ -49,7 +49,7 @@ public class Aquario {
         this.altura = altura;
     }
 
-    public void setLArgura(double largura) {
+    public void setLargura(double largura) {
         if (largura <= 0.0) {
             throw new RuntimeException("Largura Inválido");
         }
