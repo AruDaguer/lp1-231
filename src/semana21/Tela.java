@@ -1,0 +1,63 @@
+package semana21;
+import java.util.ArrayList;
+
+public class Tela {
+    // private ArrayList<Quadrado> quadrados;
+    // private ArrayList<Retangulo> retangulos;
+    private ArrayList<FiguraGeometrica> figuras;
+
+    public Tela() {
+        // quadrados = new ArrayList<>();
+        // retangulos = new ArrayList<>();
+        figuras = new ArrayList<>();
+    }
+
+    // public void addQuadrado(Quadrado q) {
+    //     quadrados.add(q);
+    // }
+
+    // public void addRetangulo(Retangulo r) {
+    //     retangulos.add(r);
+    // }
+
+    public void addFigura(FiguraGeometrica f) {
+        figuras.add(f);
+    }
+
+    public double totalArea() {
+        double total = 0.0;
+
+        // for (Quadrado quadrado : quadrados) {
+        //    total += quadrado.calcularArea();
+        // }
+
+        // for (Retangulo retangulo : retangulos) {
+        //     total += retangulo.calcularArea();
+        // }
+
+        for (FiguraGeometrica figura : figuras) {
+            total += figura.calcularArea();
+        }
+
+        return total;
+    }
+
+    public double totalPerimetro() {
+        double total = 0.0;
+
+        // for (Quadrado quadrado : quadrados) {
+        //     total += quadrado.calcularPerimetro();
+        // }
+
+        // for (Retangulo retangulo : retangulos) {
+        //     total += retangulo.calcularPerimetro();
+        // }
+
+
+        for (FiguraGeometrica figura : figuras) {
+            total += figura.calcularPerimetro();
+        }
+
+        return total;
+    }
+}

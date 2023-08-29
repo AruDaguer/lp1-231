@@ -16,16 +16,17 @@ public class SistemaQuestoes {
         opcoesMultiplaEscolha.add("Verde");
         prova.adicionarQuestao(new QuestaoMultiplaEscolha(3, "Selecione as cores da bandeira do Brasil: Azul, Laranja, Marrom, Verde (separadas por vírgula).", opcoesMultiplaEscolha));
 
-        Scanner scanner = new Scanner(System.in);
-        List<String> respostasUsuario = new ArrayList<>();
+        try (Scanner scanner = new Scanner(System.in)) {
+            List<String> respostasUsuario = new ArrayList<>();
 
-        for (Questao questao : prova.getQuestoes()) {
-            System.out.println(questao.getEnunciado());
-            String respostaUsuario = scanner.nextLine();
-            respostasUsuario.add(respostaUsuario);
+            for (Questao questao : prova.getQuestoes()) {
+                System.out.println(questao.getEnunciado());
+                String respostaUsuario = scanner.nextLine();
+                respostasUsuario.add(respostaUsuario);
+            }
+
+            int pontuacaoTotal = prova.calcularPontuacaoTotal(respostasUsuario);
+            System.out.println("Pontuação total da prova: " + pontuacaoTotal);
         }
-
-        int pontuacaoTotal = prova.calcularPontuacaoTotal(respostasUsuario);
-        System.out.println("Pontuação total da prova: " + pontuacaoTotal);
     }
 }

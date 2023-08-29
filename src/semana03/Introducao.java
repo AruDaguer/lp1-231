@@ -16,10 +16,10 @@ public class Introducao {
          // Inteiros
          // byte, short, int, long
 
-         byte n1 = 100; // 1 byte - -128 a 127
-         short n2 = 3000; // 2 bytes - -32768 a 32767
-         int n3 = 4000000; //  4 bytes - 2 bilhoes
-         long n4 = 3232323232323L; // 8 bytes
+         //byte n1 = 100; // 1 byte - -128 a 127
+         //short n2 = 3000; // 2 bytes - -32768 a 32767
+         //int n3 = 4000000; //  4 bytes - 2 bilhoes
+        // long n4 = 3232323232323L; // 8 bytes
          // System.out.println(n1);
          // System.out.println(n2);
          // System.out.println(n3);
@@ -27,23 +27,23 @@ public class Introducao {
 
          // Ponto Flutuante 
          // float, double
-         float nota1 = 9.5f; // 4 bytes 
-         double nota2 = 9.6; // 8 bytes 
+         //float nota1 = 9.5f; // 4 bytes 
+         //double nota2 = 9.6; // 8 bytes 
          // System.out.println(nota1);
          // System.out.println(nota2);
 
          // char
-         char letra = 'A';
+         //char letra = 'A';
          // System.out.println(letra);
 
          // boolean
-         boolean ligado = true;
-         boolean teste = false;
+        // boolean ligado = true;
+         //boolean teste = false;
          // System.out.println(ligado);
          // System.out.println(teste);
 
          // String
-         String palavra = "Olá Mundo";
+         //String palavra = "Olá Mundo";
          // System.out.println(palavra.toLowerCase());
          // System.out.println(palavra.toUpperCase());
 
@@ -55,8 +55,8 @@ public class Introducao {
 
          // short idade = 15;
 
-         short idade2;
-         idade2 = 30;
+         //short idade2;
+        // idade2 = 30;
 
          // Java 10 - Inferência de tipos
          // var sobrenome = "Santos";
